@@ -76,7 +76,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   fmImagesToRelative(node) // convert image paths for gatsby images
 
-  if (node.internal.type === `MarkdownRemark`) {
+  // https://github.com/gaearon/overreacted.io/issues/71#issuecomment-454262558
+  if (node.internal.type === `MarkdownRemark` && node.internal.fieldOwners.slug !== 'gatsby-plugin-i18n') {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
