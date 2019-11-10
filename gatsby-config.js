@@ -10,7 +10,7 @@ module.exports = {
       {
       resolve: 'gatsby-plugin-i18n',
       options: {        
-        langKeyDefault: 'en',
+        langKeyDefault: 'fr',
         useLangKeyLayout: false,
         markdownRemark: {
           postPage: 'src/templates/index-page.js',
